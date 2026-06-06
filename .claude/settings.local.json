@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pdftoppm -v)",
+      "Bash(pdftotext CV_Team_Project_Brief.pdf -)",
+      "Bash(python3 -c ' *)",
+      "Bash(python3 -m src.enhance images/frame_000000.PNG)",
+      "Read(//Users/maksimagafonov/**)",
+      "Bash(ls -la \"computer vision/.venv/bin/python\"*)",
+      "Bash(\"computer vision/.venv/bin/python\" -c \"import cv2, numpy; print\\('cv2', cv2.__version__, 'numpy', numpy.__version__\\)\")",
+      "Bash(.venv/bin/python -)"
+    ]
+  }
+}
