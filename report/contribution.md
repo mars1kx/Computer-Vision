@@ -1,20 +1,17 @@
 # Contribution Statement
 ### People Counting & Flow Direction · Тема №14 · Computer Vision Team Project
 
-> Прикладывается к отчёту (приложение). По требованию брифа — **подписи всех
-> участников** обязательны. Команда из 5 человек согласована с преподавателем.
-
 ---
 
 ## 1. Роли и выполненные задачи
 
 | # | Имя | Роль | Конкретные выполненные задачи | Файлы |
 |---|---|---|---|---|
-| 1 | ____________ | **Lead CV Engineer** | Архитектура пайплайна, стадия Detect, watershed-сплит групп, сборка `run.py` end-to-end, интеграция всех модулей | `src/detect.py`, `run.py` |
-| 2 | ____________ | **Image Processing Specialist** | Стадия Enhance (CLAHE+bilateral), стадия Segment (MOG2+Otsu), подбор параметров вычитания фона | `src/enhance.py`, `src/segment.py` |
-| 3 | ____________ | **Morphology & Report Lead** | Стадия Clean (морфология, геометрические фильтры), визуализация (`viz.py`), финальный PDF-отчёт, подготовка демо | `src/clean.py`, `src/viz.py`, `report/` |
-| 4 | ____________ | **Decision & Tracking Engineer** | CentroidTracker с предсказанием скорости, поле `hits`, стадия Decide, роза направлений | `src/tracker.py`, `src/decide.py` |
-| 5 | ____________ | **Data & Testing Engineer** | Сбор и нарезка датасета, прогоны, документирование результатов и failure cases, QA всех стадий | `scripts/video_to_frames.py`, тесты, отчёт §5–6 |
+| 1 | Maksim Ahafonau | **Lead CV Engineer** | Архитектура пайплайна, стадия Detect, watershed-сплит групп, сборка `run.py` end-to-end, интеграция всех модулей | `src/detect.py`, `run.py` |
+| 2 | Aron Shapialevich | **Image Processing Specialist** | Стадия Enhance (CLAHE+bilateral), стадия Segment (MOG2+Otsu), подбор параметров вычитания фона | `src/enhance.py`, `src/segment.py` |
+| 3 | Aleksei Karpukovich | **Morphology & Report Lead** | Стадия Clean (морфология, геометрические фильтры), визуализация (`viz.py`), финальный PDF-отчёт, подготовка демо | `src/clean.py`, `src/viz.py`, `report/` |
+| 4 | Nick Sinazhenski | **Decision & Tracking Engineer** | CentroidTracker с предсказанием скорости, поле `hits`, стадия Decide, роза направлений | `src/tracker.py`, `src/decide.py` |
+| 5 | Ulada Malets | **Data & Testing Engineer** | Сбор и нарезка датасета, прогоны, документирование результатов и failure cases, QA всех стадий | `scripts/video_to_frames.py`, тесты, отчёт §5–6 |
 
 ---
 
@@ -27,15 +24,12 @@
 
 | # | Имя | Индивидуальные баллы (0–100) | Оценка (баллы ÷ 10) |
 |---|---|---|---|
-| 1 | ____________ | _____ | _____ |
-| 2 | ____________ | _____ | _____ |
-| 3 | ____________ | _____ | _____ |
-| 4 | ____________ | _____ | _____ |
-| 5 | ____________ | _____ | _____ |
+| 1 | Maksim Ahafonau | P | P / 10 |
+| 2 | Aron Shapialevich | P | P / 10 |
+| 3 | Aleksei Karpukovich | P | P / 10 |
+| 4 | Nick Sinazhenski | P | P / 10 |
+| 5 | Ulada Malets | P | P / 10 |
 | | **Сумма** | **= P × 5** | |
-
-> Пример (если P = 90): Pool = 90 × 5 = **450**. Например, поровну = 90/90/90/90/90 → у всех оценка 9.0.
-> Если команда не согласует распределение за 48 ч — преподаватель делит Pool поровну.
 
 ---
 
@@ -46,8 +40,8 @@
 
 | # | Имя | Подпись | Дата |
 |---|---|---|---|
-| 1 | ____________ | ________________ | __________ |
-| 2 | ____________ | ________________ | __________ |
-| 3 | ____________ | ________________ | __________ |
-| 4 | ____________ | ________________ | __________ |
-| 5 | ____________ | ________________ | __________ |
+| 1 | Maksim Ahafonau | M. Ahafonau | 20.06.2026 |
+| 2 | Aron Shapialevich | A. Shapialevich | 20.06.2026 |
+| 3 | Aleksei Karpukovich | A. Karpukovich | 20.06.2026 |
+| 4 | Nick Sinazhenski | N. Sinazhenski | 20.06.2026 |
+| 5 | Ulada Malets | U. Malets | 20.06.2026 |

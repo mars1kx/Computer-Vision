@@ -1,23 +1,22 @@
 # People Counting & Flow Direction — Презентация
 ### 10 минут (по 2 мин на участника) + 5 минут Q&A
 
-> Тема №14. Классический OpenCV, без нейросетей.
-> По требованию брифа: **каждый участник презентует свою секцию**,
-> включить motivation, pipeline walkthrough, **live demo**, failure analysis.
-> Формат: 12–14 слайдов. Можно экспортировать из этого .md (Marp/Slidev) или
-> перенести в PowerPoint.
-
 ---
 
 ## Слайд 1 — Титул (15 сек, ведёт Lead)
 - **People Counting & Flow Direction**
 - Тема №14 · Computer Vision Team Project
-- Команда из 5 человек: имена + роли
+- Команда из 5 человек:
+  - **Lead CV Engineer (Team Lead):** Maksim Ahafonau
+  - **Image Processing Specialist:** Aron Shapialevich
+  - **Morphology & Report Lead:** Aleksei Karpukovich
+  - **Decision & Tracking Engineer:** Nick Sinazhenski
+  - **Data & Testing Engineer:** Ulada Malets
 - «Считаем людей сверху и направление потока. Только классический OpenCV».
 
 ---
 
-## БЛОК 1 — Lead CV Engineer (2 мин)
+## БЛОК 1 — Lead CV Engineer (Maksim Ahafonau, 2 мин)
 
 ### Слайд 2 — Motivation & задача
 - Зачем: подсчёт посетителей, анализ потоков (ТЦ, площади, транспорт).
@@ -27,12 +26,12 @@
 
 ### Слайд 3 — Архитектура пайплайна
 - Схема: `image → enhance → segment → clean → detect → decide`.
-- 5 модулей в `src/`, собраны в `run.py`, запуск одной командой.
+- 5 модулей в `src/`, собраны in `run.py`, запуск одной командой.
 - Кто за какую стадию отвечает (таблица ролей).
 
 ---
 
-## БЛОК 2 — Image Processing Specialist (2 мин)
+## БЛОК 2 — Image Processing Specialist (Aron Shapialevich, 2 мин)
 
 ### Слайд 4 — Enhance
 - CLAHE по L-каналу LAB + bilateral denoise.
@@ -45,7 +44,7 @@
 
 ---
 
-## БЛОК 3 — Morphology & Report Lead (2 мин)
+## БЛОК 3 — Morphology & Report Lead (Aleksei Karpukovich, 2 мин)
 
 ### Слайд 6 — Clean
 - open/close + фильтры: площадь, высота, circularity, aspect, solidity.
@@ -59,7 +58,7 @@
 
 ---
 
-## БЛОК 4 — Decision & Tracking Engineer (2 мин)
+## БЛОК 4 — Decision & Tracking Engineer (Nick Sinazhenski, 2 мин)
 
 ### Слайд 8 — Detect + Tracking
 - Связные компоненты → bbox; watershed разделяет слипшихся людей.
@@ -73,7 +72,7 @@
 
 ---
 
-## БЛОК 5 — Data & Testing Engineer (2 мин)
+## БЛОК 5 — Data & Testing Engineer (Ulada Malets, 2 мин)
 
 ### Слайд 10 — Dataset & прогоны (own dataset — бонус)
 - Собственный ролик, нарезка `scripts/video_to_frames.py` (каждый 4-й кадр).
@@ -103,16 +102,9 @@
 ## Тайминг (10 мин)
 | Блок | Участник | Время |
 |---|---|---|
-| Титул + архитектура | Lead | 2:00 |
-| Enhance + Segment | Image Processing | 2:00 |
-| Clean + Visualization | Morphology & Report | 2:00 |
-| Detect/Track + Decide | Decision & Tracking | 2:00 |
-| Dataset + Failure + Demo | Data & Testing | 2:00 |
+| Титул + архитектура | Lead (Maksim Ahafonau) | 2:00 |
+| Enhance + Segment | Image Processing (Aron Shapialevich) | 2:00 |
+| Clean + Visualization | Morphology & Report (Aleksei Karpukovich) | 2:00 |
+| Detect/Track + Decide | Decision & Tracking (Nick Sinazhenski) | 2:00 |
+| Dataset + Failure + Demo | Data & Testing (Ulada Malets) | 2:00 |
 | **Q&A** | Все | 5:00 |
-
-## Чек-лист перед защитой
-- [ ] Вписать имена в титул и таблицу ролей.
-- [ ] Проверить, что `python run.py --live` запускается на ноутбуке для демо.
-- [ ] Подготовить `output.mp4` как резерв демо.
-- [ ] Экспортировать отчёт в `report/report.pdf` с картинками.
-- [ ] Подписать `report/contribution.md`.

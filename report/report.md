@@ -1,15 +1,10 @@
 # People Counting & Flow Direction
 ### Командный проект по курсу Computer Vision · Тема №14
 
-> Черновик отчёта (5–8 страниц). Каждый раздел подписан автором.
-> Цифры и картинки взяты из реального прогона `python run.py --save --video`.
-> Перед сдачей: вписать имена, экспортировать в PDF (`report/report.pdf`),
-> вставить картинки из `outputs/per_frame/` и `outputs/final/`.
-
 ---
 
 ## 1. Problem Description
-**Автор: Lead CV Engineer (имя: __________)**
+**Автор: Lead CV Engineer (имя: Maksim Ahafonau)**
 
 Задача — подсчитать количество уникальных людей на видео с **верхней
 (статичной) камеры** и оценить **преобладающее направление их движения**.
@@ -39,14 +34,12 @@
 
 | # | Роль | Имя | Стадии пайплайна | Модуль(и) |
 |---|---|---|---|---|
-| 1 | Lead CV Engineer | _______ | Detect + сборка системы | `src/detect.py`, `run.py` |
-| 2 | Image Processing Specialist | _______ | Enhance + Segment | `src/enhance.py`, `src/segment.py` |
-| 3 | Morphology & Report Lead | _______ | Clean + Visualization + PDF-отчёт | `src/clean.py`, `src/viz.py` |
-| 4 | Decision & Tracking Engineer | _______ | Decide + трекинг | `src/decide.py`, `src/tracker.py` |
-| 5 | Data & Testing Engineer | _______ | QA всех стадий, датасет, failure cases | `scripts/video_to_frames.py`, прогоны |
-
-> Роль №4 выделена из связки «Detect + Decision» брифа, чтобы дать
-> пятому участнику самостоятельный модуль (трекинг + принятие решения).
+| 1 | Lead CV Engineer | Maksim Ahafonau | Detect + сборка системы | `src/detect.py`, `run.py` |
+| 2 | Image Processing Specialist | Aron Shapialevich | Enhance + Segment | `src/enhance.py`, `src/segment.py` |
+| 3 | Morphology & Report Lead | Aleksei Karpukovich | Clean + Visualization + PDF-отчёт | `src/clean.py`, `src/viz.py` |
+| 4 | Decision & Tracking Engineer | Nick Sinazhenski | Decide + трекинг | `src/decide.py`, `src/tracker.py` |
+| 5 | Data & Testing Engineer | Ulada Malets | QA всех стадий, датасет, failure cases | `scripts/video_to_frames.py`, прогоны |
+*Примечание: Роль №4 (Decision & Tracking Engineer) выделена из стандартной связки «Detect + Decision» брифа, чтобы распределить задачи на 5 участников (добавив отдельный модуль трекинга и логики принятия решений).*
 
 ---
 
@@ -137,7 +130,6 @@ image → enhance → segment → clean → detect → decide
 `outputs/final/output.mp4`.
 
 ### 5.2 Stage-by-stage картинки
-> Вставить из `outputs/per_frame/frame_000030/` (типичный кадр с людьми):
 
 | Стадия | Файл |
 |---|---|

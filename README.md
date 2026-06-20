@@ -6,7 +6,7 @@
 
 ---
 
-## 📂 Структура проекта
+## Структура проекта
 
 ```
 people-flow/
@@ -29,7 +29,7 @@ people-flow/
 
 ---
 
-## 🚀 Установка и запуск
+## Установка и запуск
 
 ```bash
 # 1. Создать виртуальное окружение
@@ -47,9 +47,9 @@ python run.py --video             # экспорт outputs/final/output.mp4
 python run.py --save --live --video   # всё сразу
 ```
 
-### 🎞 Свой ролик → кадры
+### Свой ролик → кадры
 
-Если хочешь прогнать пайплайн на **своём видео**, сначала нарежь его
+Чтобы запустить пайплайн на **своём видео**, сначала нарежьте
 на кадры (любой формат: mp4/mov/avi/…):
 
 ```bash
@@ -76,7 +76,7 @@ python scripts/video_to_frames.py path/to/video.mp4 \
   фильтры по площади / высоте могут потребовать подкрутки.
 - `--clear` — очищает папку `--out` перед сохранением (полезно при повторных прогонах).
 
-После нарезки запускаешь обычно: `python run.py --save --video`.
+После нарезки запускаем обычно: `python run.py --save --video`.
 
 Финальные числа лежат в `outputs/final/stats.json`:
 ```json
@@ -93,18 +93,15 @@ python scripts/video_to_frames.py path/to/video.mp4 \
 
 | # | Роль | Кто отвечает | Стадии |
 |---|---|---|---|
-| 1 | Lead CV Engineer | _имя_ | Detect + Decide + сборка `run.py` |
-| 2 | Image Processing Specialist | _имя_ | Enhance (`src/enhance.py`) |
-| 3 | Segmentation Engineer | _имя_ | Segment (`src/segment.py`) |
-| 4 | Morphology & Report Lead | _имя_ | Clean + финальный PDF-отчёт |
-| 5 | Data & Testing Engineer | _имя_ | Датасет, прогоны, failure cases, слайды |
-
-> Преподавателем согласован состав из 5 человек (стандартный brief — 3–4).
-> Каждый участник отвечает за свой модуль и свою часть презентации.
+| 1 | Lead CV Engineer | Maksim Ahafonau | Detect + сборка `run.py` |
+| 2 | Image Processing Specialist | Aron Shapialevich | Enhance + Segment (`src/enhance.py`, `src/segment.py`) |
+| 3 | Morphology & Report Lead | Aleksei Karpukovich | Clean + финальный PDF-отчёт |
+| 4 | Decision & Tracking Engineer | Nick Sinazhenski | Decide + трекинг (`src/decide.py`, `src/tracker.py`) |
+| 5 | Data & Testing Engineer | Ulada Malets | Датасет, прогоны, failure cases, слайды |
 
 ---
 
-## 🧪 Пайплайн (5 стадий по требованию brief)
+## Пайплайн (5 стадий)
 
 ```
 image → enhance → segment → clean → detect → decide
@@ -120,25 +117,9 @@ image → enhance → segment → clean → detect → decide
 
 ---
 
-## 📄 Отчёт и презентация
+## Отчёт и презентация
 
-- **Отчёт** — `report/report.pdf`, 5–8 страниц на русском, по 1 разделу от каждого участника.
-- **Презентация** — `slides/presentation.md`, 10 минут (по 2 минуты на участника) + 5 минут Q&A.
-- **Contribution Statement** — `report/contribution.md`, подписи всех 5 участников.
+- **Отчёт** — `report/report.pdf`, по 1 разделу от каждого участника.
+- **Презентация** — `slides/presentation.md`, 10 минут.
 
----
 
-## ✅ Что покрыто из рубрики (100 баллов)
-
-| Критерий | Баллы | Где |
-|---|---|---|
-| Pipeline Completeness | 20 | все 5 стадий подключены в `run.py` |
-| Technical Implementation | 25 | чистый OpenCV, модули разделены |
-| Detection Quality | 15 | трекер по ID, фильтр по площади/форме |
-| Decision Logic | 10 | count + dominant direction в `stats.json` |
-| Visualization & Output | 10 | 6 PNG на кадр + `output.mp4` + роза |
-| Report Quality | 10 | `report/report.pdf` |
-| Team Presentation | 5 | `slides/presentation.md` |
-| Team Organization | 5 | `report/contribution.md` |
-| **Бонус:** real-time demo | +5 | `python run.py --live` |
-| **Бонус:** method comparison | +5 | MOG2 vs Otsu в одном пайплайне, см. отчёт |
